@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import AppCenter
 import AppCenterAnalytics
-//import AppCenterPush
+import AppCenterPush
 
 class MSEventsVC: UIViewController {
     

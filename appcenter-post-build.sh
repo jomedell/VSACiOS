@@ -25,6 +25,8 @@ CustomVariable="changedVariable"
 echo $CustomVariable
 echo "Finished updating variable"
 
+
+
 appCenterAPItoken=$AppCenterToken
 appName="VSAC-Organization/VSACiOS"
 devices="VSAC-Organization/iphoneset"

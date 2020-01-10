@@ -11,6 +11,7 @@
 		582EED252167B130002D13B9 /* azure-pipelines.yml in Resources */ = {isa = PBXBuildFile; fileRef = 582EED242167B130002D13B9 /* azure-pipelines.yml */; };
 		582EED262167B149002D13B9 /* appcenter-post-build.sh in Resources */ = {isa = PBXBuildFile; fileRef = 58E3779F208E3EAA000EEFC2 /* appcenter-post-build.sh */; };
 		5848DB691FF5B16100C99BF8 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 5848DB681FF5B16100C99BF8 /* README.md */; };
+		585ED73923C934D600B76939 /* appcenter-pre-build.sh in Resources */ = {isa = PBXBuildFile; fileRef = 585ED73823C934D600B76939 /* appcenter-pre-build.sh */; };
 		587FE27C1FF58E1800B127B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587FE27B1FF58E1800B127B3 /* AppDelegate.swift */; };
 		587FE2811FF58E1800B127B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 587FE27F1FF58E1800B127B3 /* Main.storyboard */; };
 		587FE2831FF58E1800B127B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 587FE2821FF58E1800B127B3 /* Assets.xcassets */; };
@@ -50,6 +51,7 @@
 		435EA8E7F0828B3174967E7E /* Pods_VSACTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VSACTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		582EED242167B130002D13B9 /* azure-pipelines.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "azure-pipelines.yml"; sourceTree = "<group>"; };
 		5848DB681FF5B16100C99BF8 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
+		585ED73823C934D600B76939 /* appcenter-pre-build.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "appcenter-pre-build.sh"; sourceTree = "<group>"; };
 		587FE2781FF58E1800B127B3 /* VSAC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VSAC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		587FE27B1FF58E1800B127B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		587FE2801FF58E1800B127B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				582EED242167B130002D13B9 /* azure-pipelines.yml */,
+				585ED73823C934D600B76939 /* appcenter-pre-build.sh */,
 				58E3779F208E3EAA000EEFC2 /* appcenter-post-build.sh */,
 				5848DB681FF5B16100C99BF8 /* README.md */,
 				589179DF1FFBF9A400DE3493 /* .gitignore */,
@@ -308,6 +311,7 @@
 			files = (
 				582EED252167B130002D13B9 /* azure-pipelines.yml in Resources */,
 				589179E01FFBF9A400DE3493 /* .gitignore in Resources */,
+				585ED73923C934D600B76939 /* appcenter-pre-build.sh in Resources */,
 				587FE2861FF58E1800B127B3 /* LaunchScreen.storyboard in Resources */,
 				587FE2831FF58E1800B127B3 /* Assets.xcassets in Resources */,
 				5848DB691FF5B16100C99BF8 /* README.md in Resources */,
