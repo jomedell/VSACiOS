@@ -29,7 +29,7 @@ echo $Secret_environmet
 echo "printer secret variable"
 
 echo $Secret_PWDPublicKey
-echo "print testingEnv"
+echo "print Secret_PWDPublicKey"
 
 
 
