@@ -28,7 +28,7 @@ echo "Finished updating variable"
 echo $Secret_environmet
 echo "printer secret variable"
 
-echo $testingEnv
+echo $Secret_PWDPublicKey
 echo "print testingEnv"
 
 
