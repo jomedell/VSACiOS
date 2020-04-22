@@ -1,2 +1,9 @@
 language: swift
-script: xcodebuild -workspace VSAC.xcworkspace -scheme VSAC -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
+#script: xcodebuild -workspace VSAC.xcworkspace -scheme VSAC -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
+
+osx_image: xcode10.1
+xcode_workspace: VSAC.xcworkspace
+xcode_scheme: VSAC Dev
+xcode_destination: platform=iOS Simulator,OS=12.1,name=iPhone X
+before_install:
+- pod install
