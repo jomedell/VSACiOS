@@ -12,6 +12,7 @@
 # The script will build, run and display the results in the build logs.
 #
 
+
 set -e
 
 echo "******************************************************"
