@@ -23,8 +23,8 @@ echo "******************************************************"
 #
 #cat $APPCENTER_XCODE_SCHEME
 
-echo "xcode project"
-cat $APPCENTER_XCODE_PROJECT
+#echo "xcode project"
+#cat $APPCENTER_XCODE_PROJECT
 
 INFO_PLIST_FILE=$APPCENTER_SOURCE_DIRECTORY/VSAC/Info.plist
 
