@@ -18,6 +18,12 @@ echo "******************************************************"
 echo "Pre Build Script"
 echo "******************************************************"
 
+if [ -e "$INFO_PLIST_FILE" ]
+then
+    echo "File content:"
+    cat $INFO_PLIST_FILE
+fi
+
 echo "Origianl CustomVariable"
 echo $CustomVariable
 echo "CustomVariable update"
