@@ -10,7 +10,8 @@ import UIKit
 import AppCenter
 import AppCenterAnalytics
 import AppCenterCrashes
-////import AppCenterPush
+import AppCenterPush
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -31,13 +32,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // App Center
         MSAppCenter.setLogLevel(.verbose)
-        
+        MSPush.setDelegate(self as? MSPushDelegate)
         MSAppCenter.start("a13bed42-d505-4f08-acab-aefd176d0805", withServices:[
             MSAnalytics.self,
-            MSCrashes.self
+            MSCrashes.self,
+            MSPush.self
             ])
         
         return true
+    }
+    
+    func push(_ push: MSPush!, didReceive pushNotification: MSPushNotification!) {
+        let title: String = pushNotification.title ?? ""
+        var message: String = pushNotification.message ?? ""
+        var customData: String = ""
+        for item in pushNotification.customData {
+            customData =  ((customData.isEmpty) ? "" : "\(customData), ") + "\(item.key): \(item.value)"
+        }
+        if (UIApplication.shared.applicationState == .background) {
+            NSLog("Notification received in background, title: \"\(title)\", message: \"\(message)\", custom data: \"\(customData)\"");
+        } else {
+            message =  message + ((customData.isEmpty) ? "" : "\n\(customData)")
+            
+            let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: .cancel))
+            
+            // Show the alert controller.
+            self.window?.rootViewController?.present(alertController, animated: true)
+        }
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

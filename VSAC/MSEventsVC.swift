@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import AppCenter
 import AppCenterAnalytics
-//import AppCenterPush
+import AppCenterPush
 
 class MSEventsVC: UIViewController {
     
@@ -27,7 +27,7 @@ class MSEventsVC: UIViewController {
         // TODO: move to MSPushVC
         let installId = MSAppCenter.installId()
        print("PUSH - InstallID: \(installId?.description ?? "none")")
-        
+        MSAppCenter.setUserId("jomedell")
          // Custom properties - segment users then send push notifications
         let customProperties = MSCustomProperties()
         customProperties.setString("Black", forKey: "Color")

@@ -10,7 +10,7 @@
 #
 # For Xamarin, run all NUnit test projects that have "Test" in the name.
 # The script will build, run and display the results in the build logs.
-
+#
 
 set -e
 
@@ -24,6 +24,8 @@ echo "CustomVariable update"
 CustomVariable="changedVariable"
 echo $CustomVariable
 echo "Finished updating variable"
+
+
 
 appCenterAPItoken=$AppCenterToken
 appName="VSAC-Organization/VSACiOS"
@@ -55,6 +57,7 @@ echo "Build UI Test"
 #-allowProvisioningUpdates
 #
 #
+
 
 echo "scheme list"
 #ls xcrun xcodebuild -list

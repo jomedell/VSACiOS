@@ -34,9 +34,6 @@ class MSCrashesVC: UIViewController {
     
     @IBAction func crashesButtonPressed(_ sender: UIButton) {
         
-        
-        
-        MSAppCenter.setUserId("Jorge123")
         MSCrashes.generateTestCrash()
     }
 }
