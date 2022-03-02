@@ -18,11 +18,22 @@ echo "******************************************************"
 echo "Pre Build Script"
 echo "******************************************************"
 
-if [ -e "$INFO_PLIST_FILE" ]
-then
-    echo "File content:"
-    cat $INFO_PLIST_FILE
+
+echo "scheme"
+
+cat $APPCENTER_XCODE_SCHEME
+
+echo "xcode project"
+cat $APPCENTER_XCODE_PROJECT
+
+INFO_PLIST_FILE=$APPCENTER_SOURCE_DIRECTORY/VSAC/Info.plist
+
+
+echo "File content:"
+cat $INFO_PLIST_FILE
 fi
+
+
 
 echo "Origianl CustomVariable"
 echo $CustomVariable
