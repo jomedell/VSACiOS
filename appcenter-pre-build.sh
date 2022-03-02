@@ -19,9 +19,9 @@ echo "Pre Build Script"
 echo "******************************************************"
 
 
-echo "scheme"
-
-cat $APPCENTER_XCODE_SCHEME
+#echo "scheme"
+#
+#cat $APPCENTER_XCODE_SCHEME
 
 echo "xcode project"
 cat $APPCENTER_XCODE_PROJECT
