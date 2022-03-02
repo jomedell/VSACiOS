@@ -32,10 +32,6 @@ INFO_PLIST_FILE=$APPCENTER_SOURCE_DIRECTORY/VSAC/Info.plist
 echo "File content:"
 cat $INFO_PLIST_FILE
 
-BUNDLE_ID=`xcodebuild -showBuildSettings | grep PRODUCT_BUNDLE_IDENTIFIER`
-cat $BUNDLE_ID
-
-
 
 echo "Origianl CustomVariable"
 echo $CustomVariable
