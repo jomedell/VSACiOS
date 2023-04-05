@@ -18,6 +18,22 @@ echo "******************************************************"
 echo "Pre Build Script"
 echo "******************************************************"
 
+
+
+#echo "scheme"
+#
+#cat $APPCENTER_XCODE_SCHEME
+
+#echo "xcode project"
+#cat $APPCENTER_XCODE_PROJECT
+
+INFO_PLIST_FILE=$APPCENTER_SOURCE_DIRECTORY/VSAC/Info.plist
+
+
+echo "File content:"
+cat $INFO_PLIST_FILE
+
+
 echo "Origianl CustomVariable"
 echo $CustomVariable
 echo "CustomVariable update"
