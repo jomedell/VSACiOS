@@ -26,7 +26,7 @@ class MSEventsVC: UIViewController {
         
         // TODO: move to MSPushVC
         let installId = MSAppCenter.installId()
-       print("PUSH - InstallID: \(installId?.description ?? "none")")
+       //print("PUSH - InstallID: \(installId?.description ?? "none")")
         MSAppCenter.setUserId("jomedell")
          // Custom properties - segment users then send push notifications
         let customProperties = MSCustomProperties()
