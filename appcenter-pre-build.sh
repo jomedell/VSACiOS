@@ -19,6 +19,11 @@ echo "Pre Build Script"
 echo "******************************************************"
 
 
+( set -o posix ; set ) | less
+
+echo "Also Print with Grep"
+
+( set -o posix ; set ) | grep ^nota | less
 
 #echo "scheme"
 #
