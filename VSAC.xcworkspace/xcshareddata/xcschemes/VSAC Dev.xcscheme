@@ -28,7 +28,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "58D0C96022EB81C800C052EE"
+               BlueprintIdentifier = "581A57D72804DB1C000105CE"
                BuildableName = "VSACTests.xctest"
                BlueprintName = "VSACTests"
                ReferencedContainer = "container:VSAC.xcodeproj">
@@ -42,7 +42,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "58D0C95222EB81BD00C052EE"
+               BlueprintIdentifier = "581A57C82804DB10000105CE"
                BuildableName = "VSACUITests.xctest"
                BlueprintName = "VSACUITests"
                ReferencedContainer = "container:VSAC.xcodeproj">
@@ -65,6 +65,26 @@
          </BuildableReference>
       </MacroExpansion>
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "581A57C82804DB10000105CE"
+               BuildableName = "VSACUITests.xctest"
+               BlueprintName = "VSACUITests"
+               ReferencedContainer = "container:VSAC.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "581A57D72804DB1C000105CE"
+               BuildableName = "VSACTests.xctest"
+               BlueprintName = "VSACTests"
+               ReferencedContainer = "container:VSAC.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
