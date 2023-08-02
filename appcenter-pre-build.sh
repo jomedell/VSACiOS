@@ -33,9 +33,6 @@ echo "Also Print with Grep"
 #cat $APPCENTER_XCODE_PROJECT
 
 
-
-
-fi
 INFO_PLIST_FILE=$APPCENTER_SOURCE_DIRECTORY/VSAC/Info.plist
 echo "plist file content before updating:"
 cat $INFO_PLIST_FILE
@@ -49,6 +46,7 @@ echo "current version to $VERSION"
 VERSION=$((VERSION_ENV_VAR + APPCENTER_BUILD_ID))
 echo "current version to env variable + BUILD ID $VERSION"
 
+fi
 if [ -e "$INFO_PLIST_FILE" ]
 then
     echo "Updating version name to $VERSION_NAME in Info.plist"
@@ -58,8 +56,6 @@ then
     echo "plist ile content after updating both version and short tring version:"
     cat $INFO_PLIST_FILE
 fi
-
-
 
 
 echo "*******************************"
