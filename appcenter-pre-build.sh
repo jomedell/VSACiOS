@@ -47,7 +47,7 @@ echo "current version APPCENTER_BUILD_ID + 1 to $VERSION"
 VERSION=$((VERSION_ENV_VAR + APPCENTER_BUILD_ID))
 echo "current version to env variable + BUILD ID $VERSION"
 
-fi
+
 if [ -e "$INFO_PLIST_FILE" ]
 then
     echo "Updating version name to $VERSION_NAME in Info.plist"
