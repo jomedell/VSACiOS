@@ -32,30 +32,32 @@ echo "Also Print with Grep"
 #echo "xcode project"
 #cat $APPCENTER_XCODE_PROJECT
 
+
+
+
+fi
 INFO_PLIST_FILE=$APPCENTER_SOURCE_DIRECTORY/VSAC/Info.plist
-
-
-echo "File content:"
+echo "plist file content before updating:"
 cat $INFO_PLIST_FILE
 
+VERSION=$(/usr/libexec/PlistBuddy -c "Print CFBundleVersion" "${APPCENTER_SOURCE_DIRECTORY}/VSAC/Info.plist")
+VERSION=$((VERSION + 1))
+VERSION=$APPCENTER_BUILD_ID + 1
+echo "current version to $VERSION"
 
-echo "Origianl CustomVariable"
-echo $CustomVariable
-echo "CustomVariable update"
-CustomVariable="changedVariable"
-echo $CustomVariable
-echo "Finished updating variable"
+#VERSION_ENV_VAR is an evironmental variable set up in the branch configuration in App Center
+VERSION=$((VERSION_ENV_VAR + APPCENTER_BUILD_ID))
+echo "current version to env variable + BUILD ID $VERSION"
 
-echo $Secret_environmet
-echo "printer secret variable"
+if [ -e "$INFO_PLIST_FILE" ]
+then
+    echo "Updating version name to $VERSION_NAME in Info.plist"
+    plutil -replace CFBundleVersion -string $VERSION $INFO_PLIST_FILE
+    #plutil -replace CFBundleShortVersionString -string $VERSION_SHORT $INFO_PLIST_FILE
 
-echo $Secret_PWDPublicKey
-echo "print Secret_PWDPublicKey"
-
-
-
-
-
+    echo "plist ile content after updating both version and short tring version:"
+    cat $INFO_PLIST_FILE
+fi
 
 
 
