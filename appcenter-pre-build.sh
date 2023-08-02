@@ -60,7 +60,7 @@ echo "changed short version to env variable + BUILD ID $VERSION_SHORT"
 
 if [ -e "$INFO_PLIST_FILE" ]
 then
-    echo "Updating version name to $VERSION in Info.plist"
+    echo "Updating short version and version to $VERSION_SHORT $VERSION in Info.plist"
     plutil -replace CFBundleVersion -string $VERSION $INFO_PLIST_FILE
     plutil -replace CFBundleShortVersionString -string $VERSION_SHORT $INFO_PLIST_FILE
 
