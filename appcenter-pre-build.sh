@@ -38,9 +38,10 @@ echo "plist file content before updating:"
 cat $INFO_PLIST_FILE
 
 VERSION=$(/usr/libexec/PlistBuddy -c "Print CFBundleVersion" "${APPCENTER_SOURCE_DIRECTORY}/VSAC/Info.plist")
-VERSION=$((VERSION + 1))
-VERSION=$APPCENTER_BUILD_ID + 1
 echo "current version to $VERSION"
+
+VERSION=$((APPCENTER_BUILD_ID + 1))
+echo "current version APPCENTER_BUILD_ID + 1 to $VERSION"
 
 #VERSION_ENV_VAR is an evironmental variable set up in the branch configuration in App Center
 VERSION=$((VERSION_ENV_VAR + APPCENTER_BUILD_ID))
