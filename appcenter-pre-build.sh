@@ -45,15 +45,15 @@ VERSION_SHORT=$(/usr/libexec/PlistBuddy -c "Print CFBundleShortVersionString" "$
 echo "plist current version $VERSION"
 echo "plist current short version $VERSION_SHORT"
 
-#This changes the version using the pipeline env variable $APPCENTER_BUILD_ID + 1
-VERSION=$((APPCENTER_BUILD_ID + 1))
-echo "changed version to APPCENTER_BUILD_ID + 1 to $VERSION"
+#Option 1: This changes the version using the pipeline env variable $APPCENTER_BUILD_ID + 1
+VERSION_USING_APPCENTER_BUILD_ID=$((APPCENTER_BUILD_ID + 1))
+echo "changed version to APPCENTER_BUILD_ID + 1 to $VERSION_USING_APPCENTER_BUILD_ID"
 
-#This changes the version using a Const env variable configured in the branch configuration in App Center portal $VERSION_ENV_VAR = 2
+#Option 2: This changes the version using a Const env variable configured in the branch configuration in App Center portal $VERSION_ENV_VAR = 2 + APPCENTER_BUILD_ID
 VERSION=$((VERSION_ENV_VAR + APPCENTER_BUILD_ID))
 echo "changed version to env variable + BUILD ID $VERSION"
 
-#This changes the short version using a Const env variable configured in the branch configuration in App Center portal $VERSION_SHORT_ENV_VAR = 5
+#Option 2: This changes the short version using a Const env variable configured in the branch configuration in App Center portal $VERSION_SHORT_ENV_VAR = 5 + 1
 VERSION_SHORT=$((VERSION_SHORT_ENV_VAR + 1))
 echo "changed short version to env variable + BUILD ID $VERSION_SHORT"
 
