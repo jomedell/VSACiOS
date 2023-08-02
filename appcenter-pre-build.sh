@@ -18,12 +18,13 @@ echo "******************************************************"
 echo "Pre Build Script"
 echo "******************************************************"
 
-
+echo "Print ENV Var:"
 ( set -o posix ; set ) | less
 
-echo "Also Print with Grep"
-
-( set -o posix ; set ) | grep ^nota | less
+echo "******************************************************"
+echo "******************************************************"
+echo "******************************************************"
+echo "******************************************************"
 
 #echo "scheme"
 #
@@ -33,26 +34,35 @@ echo "Also Print with Grep"
 #cat $APPCENTER_XCODE_PROJECT
 
 
+
 INFO_PLIST_FILE=$APPCENTER_SOURCE_DIRECTORY/VSAC/Info.plist
 echo "plist file content before updating:"
 cat $INFO_PLIST_FILE
 
+#This sets the current version and short version
 VERSION=$(/usr/libexec/PlistBuddy -c "Print CFBundleVersion" "${APPCENTER_SOURCE_DIRECTORY}/VSAC/Info.plist")
-echo "current version to $VERSION"
+VERSION_SHORT=$(/usr/libexec/PlistBuddy -c "Print CFBundleShortVersionString" "${APPCENTER_SOURCE_DIRECTORY}/VSAC/Info.plist")
+echo "plist current version $VERSION"
+echo "plist current short version $VERSION_SHORT"
 
+#This changes the version using the pipeline env variable $APPCENTER_BUILD_ID + 1
 VERSION=$((APPCENTER_BUILD_ID + 1))
-echo "current version APPCENTER_BUILD_ID + 1 to $VERSION"
+echo "changed version to APPCENTER_BUILD_ID + 1 to $VERSION"
 
-#VERSION_ENV_VAR is an evironmental variable set up in the branch configuration in App Center
+#This changes the version using an env variable configured in the branch configuration in App Center portal $VERSION_ENV_VAR
 VERSION=$((VERSION_ENV_VAR + APPCENTER_BUILD_ID))
-echo "current version to env variable + BUILD ID $VERSION"
+echo "changed version to env variable + BUILD ID $VERSION"
+
+#This changes the short version using an env variable configured in the branch configuration in App Center portal $VERSION_SHORT_ENV_VAR
+VERSION_SHORT=$((VERSION_SHORT_ENV_VAR + APPCENTER_BUILD_ID))
+echo "changed short version to env variable + BUILD ID $VERSION_SHORT"
 
 
 if [ -e "$INFO_PLIST_FILE" ]
 then
-    echo "Updating version name to $VERSION_NAME in Info.plist"
+    echo "Updating version name to $VERSION in Info.plist"
     plutil -replace CFBundleVersion -string $VERSION $INFO_PLIST_FILE
-    #plutil -replace CFBundleShortVersionString -string $VERSION_SHORT $INFO_PLIST_FILE
+    plutil -replace CFBundleShortVersionString -string $VERSION_SHORT $INFO_PLIST_FILE
 
     echo "plist ile content after updating both version and short tring version:"
     cat $INFO_PLIST_FILE
