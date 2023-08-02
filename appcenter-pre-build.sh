@@ -49,12 +49,12 @@ echo "plist current short version $VERSION_SHORT"
 VERSION=$((APPCENTER_BUILD_ID + 1))
 echo "changed version to APPCENTER_BUILD_ID + 1 to $VERSION"
 
-#This changes the version using an env variable configured in the branch configuration in App Center portal $VERSION_ENV_VAR
+#This changes the version using a Const env variable configured in the branch configuration in App Center portal $VERSION_ENV_VAR = 2
 VERSION=$((VERSION_ENV_VAR + APPCENTER_BUILD_ID))
 echo "changed version to env variable + BUILD ID $VERSION"
 
-#This changes the short version using an env variable configured in the branch configuration in App Center portal $VERSION_SHORT_ENV_VAR
-VERSION_SHORT=$((VERSION_SHORT_ENV_VAR + APPCENTER_BUILD_ID))
+#This changes the short version using a Const env variable configured in the branch configuration in App Center portal $VERSION_SHORT_ENV_VAR = 5
+VERSION_SHORT=$((VERSION_SHORT_ENV_VAR + 1))
 echo "changed short version to env variable + BUILD ID $VERSION_SHORT"
 
 
